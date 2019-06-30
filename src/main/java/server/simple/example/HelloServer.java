@@ -2,7 +2,6 @@ package server.simple.example;
 
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -17,11 +16,11 @@ public class HelloServer {
 
         ServerBootstrap bootstrap = new ServerBootstrap();
 
-        bootstrap.group(mainGroup,subGroup) // set main/sub goups for the server
-                .channel(NioServerSocketChannel.class) // set the class for NIO two-way channel
-                .childHandler(new HelloServerInitializer()); //set the handler for subGroup
+        bootstrap.group(mainGroup,subGroup) // set main/sub goups for the server  / 'hiring waiters'
+                .channel(NioServerSocketChannel.class) // set the class for NIO two-way channel / 'assign areas'
+                .childHandler(new HelloServerInitializer()); //set the handler for subGroup / 'define duties'
         try{
-            ChannelFuture channelFuture = bootstrap.bind(8088).sync();
+            ChannelFuture channelFuture = bootstrap.bind(8088).sync();  //
             channelFuture.channel().closeFuture().sync();
         }finally {
             mainGroup.shutdownGracefully();
