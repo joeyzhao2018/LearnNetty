@@ -17,7 +17,9 @@ http://tinyurl.com/y2ydadzw
     a. var socket= new WebSocket("ws://[ip]:[port]")
     b. Lifecycle events : onopen() onmessage() onerror() onclose() 
     c. Proactive methods: Socket.send(), Socket.close()
-    
+ 3. MUI HTML 5+ 
+    a. mui.plusReady is required for phone (or other devices) views. PLUS is the API.
+    b. use https://www.iconfont.cn/   to extend the icon library
  
  **Misc**
  1. Console println to show the life cycle of a channel
@@ -40,5 +42,6 @@ http://tinyurl.com/y2ydadzw
     Channel INACTIVE
     Channel removing
     Channel removing handler class
+  
     
     
